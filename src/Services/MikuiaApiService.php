@@ -11,6 +11,6 @@ class MikuiaApiService extends Api
 	{
 		$levels = new Levels();
 
-		return $levels->getLevels($streamer);
+		return $levels->levels($streamer);
 	}
 }
