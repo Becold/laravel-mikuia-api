@@ -1,0 +1,23 @@
+{
+    "name": "becold/laravel-mikuia-api",
+    "description": "RESTful Mikuia API for Laravel 5",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Romain Marbaix",
+            "email": "contact@romainmarbaix.be"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Becold\\MikuiaApi\\": "src"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "php": "^7.0"
+    },
+    "require-dev": {
+    }
+}
