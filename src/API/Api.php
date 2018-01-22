@@ -31,13 +31,13 @@ class Api
 
 			$response = $this->client->send($request);
 
-			return json_decode($response->getBody());
+			return json_decode($response->getBody(), true);
 		}
 		catch(RequestException $e)
 		{
 			if ($e->hasResponse())
 			{
-				return json_decode($e->getResponse()->getBody());
+				return json_decode($e->getResponse()->getBody(), true);
 			}
 			else
 			{
