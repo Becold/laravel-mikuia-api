@@ -7,10 +7,10 @@ use Becold\MikuiaApi\API\Levels;
 
 class MikuiaApiService extends Api
 {
-	public function getLevels($streamer)
+	public function getLevels($streamer, $limit = 100, $offset = 0)
 	{
 		$levels = new Levels();
 
-		return $levels->levels($streamer);
+		return $levels->levels($streamer, $limit, $offset);
 	}
 }
