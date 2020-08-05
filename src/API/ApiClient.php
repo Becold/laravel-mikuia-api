@@ -22,7 +22,7 @@ class ApiClient
 		else
 		{
 			$this->client = new Client([
-				'base_uri' => BASE_URL
+				'base_uri' => BASE_URI
 			]);
 		}
 	}
