@@ -9,6 +9,8 @@ use Becold\MikuiaApi\Exceptions\NotFoundException;
 
 class ApiClient
 {
+	public const BASE_URI = 'https://mikuia.tv/api/';
+
 	protected $client;
 
 	public function __construct($httpClient)
@@ -20,7 +22,7 @@ class ApiClient
 		else
 		{
 			$this->client = new Client([
-				'base_uri' => 'https://mikuia.tv/api/'
+				'base_uri' => BASE_URL
 			]);
 		}
 	}
