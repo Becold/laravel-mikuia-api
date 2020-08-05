@@ -6,28 +6,35 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\RequestException;
 
-class Api
+class ApiClient
 {
 	protected $client;
 
-	public function __construct()
+	public function __construct($httpClient)
 	{
-		$this->client = new Client([
-			'base_uri' => 'https://mikuia.tv/api/'
-		]);
+		if ($httpClient)
+		{
+			$this->client = $httpClient;
+		}
+		else
+		{
+			$this->client = new Client([
+				'base_uri' => 'https://mikuia.tv/api/'
+			]);
+		}
 	}
 
 	public function sendRequest($method, $path)
 	{
 		try
 		{
-			$data = [
+			$options = [
 				'headers' => [
 					'accept' => 'application/json'
 				]
 			];
 
-			$request = new Request($method, $path, $data);
+			$request = new Request($method, $path, $options);
 
 			$response = $this->client->send($request);
 

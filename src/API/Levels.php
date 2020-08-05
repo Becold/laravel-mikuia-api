@@ -2,11 +2,11 @@
 
 namespace Becold\MikuiaApi\API;
 
-class Levels extends Api
+class Levels extends ApiBase
 {
 	public function levels($streamer, $limit = 100, $offset = 0)
 	{
-		return $this->sendRequest('GET', 'levels/' . $streamer . '?limit=' . $limit . '&offset=' . $offset);
+		return $this->apiClient
+		            ->sendRequest('GET', 'levels/' . $streamer . '?limit=' . $limit . '&offset=' . $offset);
 	}
-
 }
