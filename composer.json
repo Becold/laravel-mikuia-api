@@ -9,6 +9,9 @@
             "email": "contact@romainmarbaix.be"
         }
     ],
+    "scripts": {
+        "test": "phpunit"
+    },
     "autoload": {
         "psr-4": {
             "Becold\\MikuiaApi\\": "src"
